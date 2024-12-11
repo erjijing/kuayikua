@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>每日夸夸</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #fddede, #ffebcc);
+            color: #6c2d4a;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow-x: hidden;
+        }
+        .container {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+            padding: 30px;
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+        button {
+            background-color: #ff7b94;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #ff4d70;
+        }
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        .fade-in {
+            animation: fadeIn 2s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container fade-in">
+        <h1>每日夸夸</h1>
+        <p id="compliment">点击按钮获取今日夸夸！</p>
+        <button onclick="getCompliment()">点我夸夸</button>
+    </div>
+
+    <script>
+        const compliments = [
+            "你今天的笑容比阳光还要灿烂。",
+            "你的智慧和美丽一样出众。",
+            "每次见到你，心情都会变得格外美好。",
+            "你是一个充满魅力的人，让人无法忽视。",
+            "你有着独特的风格，非常迷人。",
+            "你的眼睛里闪烁着星星般的光芒。",
+            "你的温柔如同春日微风，抚慰人心。",
+            "你的心灵美得像一幅画。",
+            "你总是能找到生活的乐趣，这一点令人钦佩。",
+            "你是独一无二的存在，无人能替代。",
+            // 可以继续添加更多的夸赞语句
+        ];
+
+        function getCompliment() {
+            const randomIndex = Math.floor(Math.random() * compliments.length);
+            document.getElementById('compliment').textContent = compliments[randomIndex];
+        }
+
+        // 自动加载时显示一条夸赞
+        window.onload = function() {
+            getCompliment();
+        };
+    </script>
+</body>
+</html>
