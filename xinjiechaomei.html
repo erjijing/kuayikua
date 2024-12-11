@@ -5,7 +5,7 @@
     <title>每日夸夸与笑话</title>
     <style>
         body {
-            background-image: url('xinqi.jpg');
+            background-image: url('xinqi.jpg'); /* 使用相对路径 */
             color: green;
             font-family: 'Arial', sans-serif;
             text-align: center;
@@ -134,7 +134,7 @@
                 console.error('There was a problem with the fetch operation:', error);
                 document.getElementById('joke').textContent = "获取笑话失败，请稍后再试。";
             } finally {
-                document.getElementById('loading').style.display = 'none'; // 隐藏加载指示器
+                document.getElementById('loading').style.display = 'none'; /* 隐藏加载指示器 */
             }
         }
     </script>
